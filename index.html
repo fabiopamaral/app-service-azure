@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure App Service | DevOps Lab</title>
+    <style>
+        :root {
+            --azure-blue: #0078d4;
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #30363d;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: var(--azure-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .status-badge {
+            background-color: #238636;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .info {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            padding-top: 1rem;
+        }
+
+        .highlight {
+            color: #58a6ff;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Azure App Service</h1>
+        <p>Deploy realizado com sucesso no meu laboratório de DevOps!</p>
+        
+        <div class="status-badge">Ambiente Online</div>
+
+        <div class="info">
+            <p>Plataforma: <span class="highlight" id="platform">Detectando...</span></p>
+            <p>Data do Deploy: <span id="date"></span></p>
+            <p>Localização: <span class="highlight">Recife, PE</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Pequeno script para tornar a página dinâmica
+        document.getElementById('date').textContent = new Date().toLocaleDateString('pt-BR');
+        
+        // Simples detecção de plataforma
+        const platform = navigator.platform;
+        document.getElementById('platform').textContent = platform;
+    </script>
+</body>
+</html>
